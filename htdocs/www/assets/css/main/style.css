@@ -1,0 +1,373 @@
+
+/*
+ * --------------------------------
+ *           UI Elements
+ * --------------------------------
+ *
+ */
+
+.navbar .alert {
+    text-align: center;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+
+/*
+ * --------------------------------
+ *             Boxed
+ * --------------------------------
+ *
+ */
+
+.boxed {
+    padding: 170px 0 100px 0;
+    background: #F7FCFE;
+}
+
+.boxed .content {
+    border: 1px solid #DDD;
+    background: #FEFEFE;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    padding: 15px 20px;
+}
+
+
+/*
+ * --------------------------------
+ *             Form
+ * --------------------------------
+ *
+ */
+
+.input-special {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #EAEAEA;
+    transition: border .3s;
+}
+
+.input-special:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.input-special:focus {
+    border-bottom-color: #BBB;
+}
+
+.input-special-title {
+    font-size: 30px;
+    color: #333;
+}
+
+.input-special-desc {
+    color: #777;
+    font-size: 20px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.input-special-email {
+
+}
+
+.label-special-email {
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.input-special-question {
+    font-size: 28px;
+}
+
+.question .input-special {
+    background: transparent;
+}
+
+.question .input-special:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #FBFBFB inset;
+}
+
+.question .input-special {
+    border-bottom: 1px solid transparent;
+}
+
+.question .input-special:hover {
+    border-bottom-color: #EEE;
+}
+
+.question .input-special:focus {
+    border-bottom-color: #BBB;
+}
+
+.questions {
+    margin-top: 30px;
+}
+
+.question, .questions .sortable-placeholder {
+    background: #FBFBFB;
+    border: 1px solid #DDD;
+    margin: 20px 0;
+    padding: 15px;
+    position: relative;
+}
+
+.questions .sortable-placeholder {
+    height: 105px;
+    border-style: dashed;
+}
+
+.question .handle-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    overflow: hidden;
+}
+
+.question .handle {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    margin-top: -15px;
+    height: 30px;
+    color: #DDD;
+    font-size: 20px;
+    width: 30px;
+    transition: all .2s;
+    transform: translateX(0px);
+    cursor: move;
+}
+
+.question .handle i {
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.question .handle:hover {
+    color: #AAA;
+    transform: translateX(5px);
+}
+
+.question .ask {
+    position: relative;
+}
+
+.question .number {
+    position: absolute;
+    font-weight: bold;
+    width: 30px;
+    text-align: center;
+    left: -5px;
+    top: 50%;
+    margin-top: -10px;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.question .phrase {
+    margin: 0 32px;
+}
+
+.question .settings {
+    position: absolute;
+    display: block;
+    right: 5px;
+    top: 0;
+}
+
+.question .settings .dropdown-toggle {
+    color: #BBB;
+    font-size: 20px;
+    transition: color .3s;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.question .settings:hover .dropdown-toggle {
+    color: #999;
+}
+
+.question .settings .dropdown-menu {
+    right: -15px;
+    left: auto;
+    margin-top: 5px;
+}
+
+.question .settings .dropdown-menu::before,
+.question .settings .dropdown-menu::after {
+    right: 11px;
+    left: auto;
+}
+
+.question .choices {
+    margin-top: 10px;
+}
+
+.question .choice {
+    margin-top: 5px;
+    padding-left: 32px;
+    position: relative;
+    font-size: 14px;
+}
+
+.question .choice .icon {
+    display: block;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #D9D9D9;
+    width: 20px;
+    text-align: center;
+    line-height: 21px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.choice .second-icon { display: none; transition: color .3s; }
+.choice:hover .first-icon { display: none; }
+.choice:hover .second-icon { display: block; }
+.choice .icon:hover .second-icon { color: red; }
+
+.choice .stats {
+    position: absolute;
+    right: 0;
+    padding-right: 40px;
+}
+
+.choice .stats .stats-count {
+    position: absolute;
+    right: 0;
+}
+
+.choice .stats .stats-bar {
+    width: 200px;
+    height: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.choice .stats .stats-progress {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.choice:nth-child(4n) .stats .stats-progress {
+    background: #6BBBDC;
+}
+
+.choice:nth-child(4n+1) .stats .stats-progress {
+    background: #C46767;
+}
+
+.choice:nth-child(4n+2) .stats .stats-progress {
+    background: #95C87C;
+}
+
+.choice:nth-child(4n+3) .stats .stats-progress {
+    background: #BB71DD;
+}
+
+.choice .responses {
+    max-height: 115px;
+    overflow: scroll;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.choice .responses .entry {
+    padding: 4px 0;
+    border-bottom: 1px solid #EEE;
+}
+
+.choice .responses .entry:last-child {
+    border-bottom: none;
+}
+
+.question .answer {
+    padding-left: 32px;
+    margin-top: 10px;
+    color: #999;
+    cursor: default;
+}
+
+.add-question {
+    margin-top: 30px;
+    display: block;
+    background: #FBFBFB;
+    border: 1px solid #DDD;
+    margin: 20px 0;
+    padding: 15px;
+    position: relative;
+    padding-left: 47px;
+    padding-right: 47px;
+    color: #555;
+    text-decoration: none;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.add-question:hover, .add-question:focus {
+    text-decoration: none;
+    color: #111;
+    background: #FEFEFE;
+    border: 1px solid #BBB;
+    outline: none;
+}
+
+.add-question .icon {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #CCC;
+    transition: color .3s;
+}
+
+.add-question:hover .icon {
+    color: #2C93FF;
+}
+
+.add-question .text {
+    margin: 0;
+}
+
+.add-question .question-types {
+    margin-top: 5px;
+}
+
+.add-question .question-type {
+    display: block;
+}
+
+.add-question .question-type .text {
+    margin-left: 5px;
+}
+
+
+/*
+ * --------------------------------
+ *           Let's begin
+ * --------------------------------
+ *
+ */
+
+.random {}

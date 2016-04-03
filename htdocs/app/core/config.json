@@ -1,0 +1,24 @@
+{    
+
+    "debug": true,
+
+    "database": {
+        "use": "SQLite",
+        "avaliable": {
+            "MySQL": ["localhost", "qform", "root", "root"],
+            "SQLite": ["../database.sqlite"]
+        }
+    },
+
+    "injector": {
+        "cookie":   "Model\\Mapper\\Cookie",
+        "session":  "Model\\Mapper\\Session",
+        "asset":    "Model\\Service\\Asset",
+        "crypt":    "Model\\Service\\Crypt",
+        "flash":    "Model\\Service\\Flash",
+        "mail":     "Model\\Service\\Mail",
+        "request":  "Model\\Service\\Request",
+        "validate": "Model\\Service\\Validate"
+    }
+
+}
