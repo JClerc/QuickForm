@@ -1,12 +1,11 @@
 <?php
 
 namespace View;
-use Base\View;
 
 /**
  * View form
  */
-class View extends View {
+class View extends \Base\View {
 
     public function id() {
         $this->set('title', $this->get('form')->getTitle());
