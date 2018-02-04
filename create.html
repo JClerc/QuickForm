@@ -1,0 +1,324 @@
+---
+permalink: create/
+---
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Créer un formulaire - QuickForm</title>
+
+    <base href="/quickform/">
+    <link href="assets/css/main/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/main/gsdk.min.css" rel="stylesheet">
+    <link href="assets/css/main/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/main/style.css" rel="stylesheet">
+
+</head>
+
+<body class="boxed">
+    <div id="navbar">
+        <nav class="navbar navbar-ct-blue navbar-fixed-top">
+            <div id="alert"></div>
+
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./">QForm</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="./">Accueil</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aide &amp; infos
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" onclick="App.alert.warn('Aide bientôt disponible !', 3);return false;">Créer un formulaire</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="App.alert.warn('Aide bientôt disponible !', 3);return false;">Modifier un formulaire</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="App.alert.warn('Aide bientôt disponible !', 3);return false;">Voir les résultats</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" data-toggle="search" class="hidden-xs">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left navbar-search-form" role="search" method="post">
+                        <div class="form-group">
+                            <input type="text" value="" class="form-control" placeholder="Votre question...">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="view/id/1/">Voir</a>
+                        </li>
+
+                        <li class="tooltip-nowrap">
+                            <a href="stats/id/1/" class="btn btn-round btn-default" data-toggle="tooltip" data-placement="bottom" data-title="Voir les statistiques"
+                                data-trigger="hover">Réponses</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <!--  end navbar -->
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="content">
+
+            <form method="POST" class="form-send" action="done/">
+
+                <input type="text" name="title" class="input-special input-special-title" placeholder="Titre.." autofocus>
+
+                <input type="text" name="desc" class="input-special input-special-desc space-10" placeholder="Description..">
+
+                <div class="questions">
+                </div>
+
+                <div class="add-question">
+                    <div class="icon">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                    <h3 class="text">Ajouter une question</h3>
+                    <div class="question-types" style="display: none;">
+                        <div>
+                            <a href="#" class="question-type" data-type="radio">
+                                <i class="fa fa-fw fa-check-circle-o"></i>
+                                <span class="text">Une seule réponse possible</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="question-type" data-type="checkbox">
+                                <i class="fa fa-fw fa-check-square-o"></i>
+                                <span class="text">Plusieurs réponses possibles</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="question-type" data-type="input">
+                                <i class="fa fa-fw fa-ellipsis-horizontal"></i>
+                                <span class="text">Texte court (une seule ligne)</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="question-type" data-type="textarea">
+                                <i class="fa fa-fw fa-align-left"></i>
+                                <span class="text">Paragraphe (plusieurs lignes)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-9">
+                            <input id="input-email" type="email" name="email" class="input-special input-special-email" placeholder="Entrez votre email">
+                            <label for="input-email" class="label-special-email">Vous recevrez un lien pour modifier et consulter les réponses du formulaire</label>
+                        </div>
+                        <div class="col-sm-4 col-md-3">
+                            <input type="hidden" name="question-count" class="question-count" value="0">
+                            <button type="submit" class="btn btn-primary btn-block">Valider</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="templates hide">
+                <div class="template-radio">
+                    <div class="question question-radio">
+                        <input type="hidden" name="questions[{COUNT}][mandatory]" value="0" class="mandatory-input">
+                        <input type="hidden" name="questions[{COUNT}][type]" value="radio">
+                        <div class="handle-wrapper">
+                            <div class="handle">
+                                <i class="fa fa-reorder"></i>
+                            </div>
+                        </div>
+                        <div class="ask">
+                            <div class="number">#{COUNT}</div>
+                            <div class="dropdown settings">
+                                <a class="dropdown-toggle" href="#" tabindex="-1" data-toggle="dropdown">
+                                    <i class="fa fa-gear"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a class="mandatory" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-asterisk"></i>
+                                            <span class="mandatory-text">Obligatoire: NON</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="delete-question" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-trash-o"></i> Supprimer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="phrase">
+                                <input type="text" name="questions[{COUNT}][phrase]" class="input-special input-hover input-special-question" placeholder="Question..">
+                            </div>
+                        </div>
+                        <div class="choices">
+                            <div class="choice">
+                                <a href="#" class="icon delete-choice" tabindex="-1">
+                                    <span class="first-icon fa fa-circle-o"></span>
+                                    <span class="second-icon fa fa-times"></span>
+                                </a>
+                                <input type="text" name="questions[{COUNT}][content][]" class="input-special input-choice" placeholder="Réponse..">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-checkbox">
+                    <div class="question question-checkbox">
+                        <input type="hidden" name="questions[{COUNT}][mandatory]" value="0" class="mandatory-input">
+                        <input type="hidden" name="questions[{COUNT}][type]" value="checkbox">
+                        <div class="handle-wrapper">
+                            <div class="handle">
+                                <i class="fa fa-reorder"></i>
+                            </div>
+                        </div>
+                        <div class="ask">
+                            <div class="number">#{COUNT}</div>
+                            <div class="dropdown settings">
+                                <a class="dropdown-toggle" href="#" tabindex="-1" data-toggle="dropdown">
+                                    <i class="fa fa-gear"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a class="mandatory" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-asterisk"></i>
+                                            <span class="mandatory-text">Obligatoire: NON</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="delete-question" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-trash-o"></i> Supprimer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="phrase">
+                                <input type="text" name="questions[{COUNT}][phrase]" class="input-special input-hover input-special-question" placeholder="Question..">
+                            </div>
+                        </div>
+                        <div class="choices">
+                            <div class="choice">
+                                <a href="#" class="icon delete-choice" tabindex="-1">
+                                    <span class="first-icon fa fa-square-o"></span>
+                                    <span class="second-icon fa fa-times"></span>
+                                </a>
+                                <input type="text" name="questions[{COUNT}][content][]" class="input-special input-choice" placeholder="Réponse..">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-input">
+                    <div class="question question-input">
+                        <input type="hidden" name="questions[{COUNT}][mandatory]" value="0" class="mandatory-input">
+                        <input type="hidden" name="questions[{COUNT}][type]" value="input">
+                        <div class="handle-wrapper">
+                            <div class="handle">
+                                <i class="fa fa-reorder"></i>
+                            </div>
+                        </div>
+                        <div class="ask">
+                            <div class="number">#{COUNT}</div>
+                            <div class="dropdown settings">
+                                <a class="dropdown-toggle" href="#" tabindex="-1" data-toggle="dropdown">
+                                    <i class="fa fa-gear"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a class="mandatory" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-asterisk"></i>
+                                            <span class="mandatory-text">Obligatoire: NON</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="delete-question" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-trash-o"></i> Supprimer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="phrase">
+                                <input type="text" name="questions[{COUNT}][phrase]" class="input-special input-hover input-special-question" placeholder="Question..">
+                            </div>
+                        </div>
+                        <div class="answer">Réponse courte</div>
+                    </div>
+                </div>
+                <div class="template-textarea">
+                    <div class="question question-textarea">
+                        <input type="hidden" name="questions[{COUNT}][mandatory]" value="0" class="mandatory-input">
+                        <input type="hidden" name="questions[{COUNT}][type]" value="textarea">
+                        <div class="handle-wrapper">
+                            <div class="handle">
+                                <i class="fa fa-reorder"></i>
+                            </div>
+                        </div>
+                        <div class="ask">
+                            <div class="number">#{COUNT}</div>
+                            <div class="dropdown settings">
+                                <a class="dropdown-toggle" href="#" tabindex="-1" data-toggle="dropdown">
+                                    <i class="fa fa-gear"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a class="mandatory" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-asterisk"></i>
+                                            <span class="mandatory-text">Obligatoire: NON</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="delete-question" tabindex="-1" href="#">
+                                            <i class="fa fa-fw fa-trash-o"></i> Supprimer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="phrase">
+                                <input type="text" name="questions[{COUNT}][phrase]" class="input-special input-hover input-special-question" placeholder="Question..">
+                            </div>
+                        </div>
+                        <div class="answer">Réponse longue</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.content -->
+    </div>
+    <!-- /.col -->
+    <div class="clearfix"></div>
+
+    <script src="assets/js/main/jquery.min.js"></script>
+    <script src="assets/js/main/bootstrap.min.js"></script>
+    <script src="assets/js/main/gsdk.js"></script>
+    <script src="assets/js/main/script.js"></script>
+    <script src="assets/js/vendor/jquery.sortable.min.js"></script>
+    <script src="assets/js/app/edit/form.js"></script>
+
+</body>
+
+</html>

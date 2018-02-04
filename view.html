@@ -1,0 +1,178 @@
+---
+permalink: view/id/1/
+---
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Test de personnalité - QuickForm</title>
+
+    <base href="/quickform/">
+    <link href="assets/css/main/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/main/gsdk.min.css" rel="stylesheet">
+    <link href="assets/css/main/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/main/style.css" rel="stylesheet">
+
+</head>
+<body class="boxed">
+    <div id="navbar">
+        <nav class="navbar navbar-ct-blue navbar-fixed-top">
+          <div id="alert"></div>
+
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="./">QForm</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="./">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aide &amp; infos <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="App.alert.warn('Aide bientôt disponible !', 3);return false;">Créer un formulaire</a></li>
+                        <li><a href="#" onclick="App.alert.warn('Aide bientôt disponible !', 3);return false;">Modifier un formulaire</a></li>
+                        <li><a href="#" onclick="App.alert.warn('Aide bientôt disponible !', 3);return false;">Voir les résultats</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" data-toggle="search" class="hidden-xs"><i class="fa fa-search"></i></a>
+                </li>
+              </ul>
+               <form class="navbar-form navbar-left navbar-search-form" role="search" method="post">
+                 <div class="form-group">
+                      <input type="text" value="" class="form-control" placeholder="Votre question...">
+                 </div>
+              </form>
+                            <ul class="nav navbar-nav navbar-right">
+                    <li><a href="stats/id/1/">Réponses</a></li>
+
+                    <li class="tooltip-nowrap"><a href="edit/id/1/" class="btn btn-round btn-default" data-toggle="tooltip" data-placement="bottom" data-title="Modifier le formulaire" data-trigger="hover">Modifier</a></li>
+              </ul>
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </div><!--  end navbar -->
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="content">
+
+    <form method="POST" class="form-send" action="thanks/">
+
+        <h2>Test de personnalité</h2>
+                    <h3 class="subtitle">Quel genre de personne es tu ?</small></h3>
+
+        <div class="questions">
+                        <div class="question" data-type="radio" data-index="0" data-required="true">
+                <div class="ask">
+                    <div class="number">#1</div>
+                    <div class="phrase">
+                        <h3 class="no-margin">Vous &ecirc;tes..</h3>
+                    </div>
+                </div>
+                                    <div class="choices">
+                                                    <label class="radio">
+                                <input type="radio"
+                                       name="answers[id_1]"
+                                       data-toggle="radio"
+                                       value="1">
+                                <i></i>Un homme                            </label>
+                                                    <label class="radio">
+                                <input type="radio"
+                                       name="answers[id_1]"
+                                       data-toggle="radio"
+                                       value="2">
+                                <i></i>Une femme                            </label>
+                                            </div>
+                            </div>
+                        <div class="question" data-type="checkbox" data-index="1" data-required="true">
+                <div class="ask">
+                    <div class="number">#2</div>
+                    <div class="phrase">
+                        <h3 class="no-margin">Vous aimez..</h3>
+                    </div>
+                </div>
+                                    <div class="choices">
+                                                    <label class="checkbox">
+                                <input type="checkbox"
+                                       name="answers[id_5][]"
+                                       data-toggle="checkbox"
+                                       value="6">
+                                <i></i>Faire du sport                            </label>
+                                                    <label class="checkbox">
+                                <input type="checkbox"
+                                       name="answers[id_5][]"
+                                       data-toggle="checkbox"
+                                       value="7">
+                                <i></i>Regarder la TV                            </label>
+                                                    <label class="checkbox">
+                                <input type="checkbox"
+                                       name="answers[id_5][]"
+                                       data-toggle="checkbox"
+                                       value="8">
+                                <i></i>Surfer sur internet                            </label>
+                                                    <label class="checkbox">
+                                <input type="checkbox"
+                                       name="answers[id_5][]"
+                                       data-toggle="checkbox"
+                                       value="9">
+                                <i></i>Lire un livre                            </label>
+                                            </div>
+                            </div>
+                        <div class="question" data-type="input" data-index="2" data-required="false">
+                <div class="ask">
+                    <div class="number">#3</div>
+                    <div class="phrase">
+                        <h3 class="no-margin">Quel est votre repas pr&eacute;f&eacute;r&eacute; ?</h3>
+                    </div>
+                </div>
+                                    <div class="choice">
+                        <input type="text" name="answers[id_3]" placeholder="Réponse" class="form-control">
+                    </div>
+                            </div>
+                        <div class="question" data-type="textarea" data-index="3" data-required="false">
+                <div class="ask">
+                    <div class="number">#4</div>
+                    <div class="phrase">
+                        <h3 class="no-margin">Quels pays avez vous visit&eacute;s ?</h3>
+                    </div>
+                </div>
+                                    <div class="choice">
+                        <textarea name="answers[id_4]" placeholder="Réponse" class="form-control" style="resize: vertical;"></textarea>
+                    </div>
+                            </div>
+                    </div>
+
+        <div class="submit">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <button type="submit" class="btn btn-primary btn-block">Valider</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+        </div><!-- /.content -->
+    </div><!-- /.col -->
+    <div class="clearfix"></div>
+
+    <script src="assets/js/main/jquery.min.js"></script>
+    <script src="assets/js/main/bootstrap.min.js"></script>
+    <script src="assets/js/main/gsdk.js"></script>
+    <script src="assets/js/main/script.js"></script>
+    <script src="assets/js/app/view/form.js"></script>
+
+</body>
+</html>
