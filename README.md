@@ -1,30 +1,59 @@
-# QuickForm
+<h1 align="center">
+  <img alt="quickform" width="652" src="https://jclerc.github.io/assets/repos/banner/quickform.jpg">
+  <br>
+</h1>
 
-### Démonstration
-Essayez le projet ici: https://qform.jclerc.com/
+<p align="center">
+  <img alt="made for: fun" src="https://jclerc.github.io/assets/static/badges/made-for/fun.svg">
+  <img alt="language: php" src="https://jclerc.github.io/assets/static/badges/language/php.svg">
+  <img alt="made in: 2016" src="https://jclerc.github.io/assets/static/badges/made-in/2016.svg">
+  <br>
+  <sub>Create custom forms, publish them and see their statistics.</sub>
+</p>
+<br>
 
-Un exemple de formulaire:
-- [Questions](https://qform.jclerc.com/view/id/1/)
-- [Réponses](https://qform.jclerc.com/stats/id/1/9e38c3eb5fe6b3f92ef6e19f83d02062f45652a5d00db4e2cec5cc9b34575f89)
-- [Modifier](https://qform.jclerc.com/edit/id/1/9e38c3eb5fe6b3f92ef6e19f83d02062f45652a5d00db4e2cec5cc9b34575f89)
+## Live demo
 
-*Note: Aucune donnée n'est enregistrée sur le site de démonstration.*
+See the project here: [jclerc.github.io/quickform](https://jclerc.github.io/quickform/) \
+_Note: this demo is static, generated from the php version._
 
-### Fonctionnalités
-- Possibilité de créer un formulaire, le modifier et voir les réponses
-- Aucun compte utilisateur n'est nécessaire
-- Envoi de mail pour récupérer le lien de modification
-- Basé sur une architecture MVC
+## Features
 
-### Installation
-1. PHP 7 requis
-2. Définissez le dossier de votre serveur web sur `/htdocs/www/`
-3. Installation terminée !
+- [x] Create a form and see answers – like Google Forms
+- [x] No user account is needed
+- [x] Use emails to get edit link
+- [x] Based on MVC pattern (without framework)
 
-### Notes
-- Un formulaire a déjà été créé et remplis avec plusieurs réponses, qui sont accessibles à la page: `votre-site.com/stats/id/1/9e38c3eb5fe6b3f92ef6e19f83d02062f45652a5d00db4e2cec5cc9b34575f89/`
+## Stack used
 
-### Passer sous MySQL
-1. Mettez `database.use` à `MySQL` dans le fichier `/htdocs/app/core/config.json`
-2. Modifier les paramètres si besoin (`database.avaliable.MySQL`)
-3. Exécutez le fichier `/sql/mysql/qform.sql`
+- PHPMailer `5.2.14`
+- PHP `7.0`
+- SQLite `3` / MySQL `5.5`
+- Apache `2.2`
+
+## Getting started
+
+#### Requirements
+
+- Apache server with PHP 7+
+
+#### Installation
+
+```sh
+git clone https://github.com/jclerc/quickform.git
+cd quickform
+```
+
+Then:
+1. Edit email settings in `/htdocs/app/model/service/mail.class.php`
+2. Start webserver in directory `/htdocs/www/` and you're done
+
+To use MySQL instead of SQLite:
+1. Set `database.use` to `MySQL` in config file (`/htdocs/app/core/config.json`)
+2. You may need to change credentials as well (in the same file)
+3. Then import schema from `/sql/mysql/qform.sql`
+
+## Notes
+
+- A form is already created with few answers, you can see it at: \
+  `your-website.com/stats/id/1/9e38c3eb5fe6b3f92ef6e19f83d02062f45652a5d00db4e2cec5cc9b34575f89/`
